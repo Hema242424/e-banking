@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Baniking Solution</title>
+    <style>
+        #main
+        {
+            width:400px;
+            height:200px;
+            margin:0 auto;
+            margin-top:100px;
+            border:1px solid white;
+        }
+        #main h1
+        {
+            text-align:center;
+            color:red;
+        }
+        #main td
+        {
+            color:white;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+    <div id="main">
+        <h1>Deposit Amount</h1>
+        <form action="{% url 'depositamt' %}" method="post">
+            {% csrf_token %}
+            <table style="margin:0 auto; width:90%;">
+                <tr>
+                    <td>Enter Amount to Deposit</td>
+                    <td><input type="number" name="amt"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Deposit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
